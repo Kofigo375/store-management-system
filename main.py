@@ -37,8 +37,23 @@ class Item:
                 price=float(item.get('Price')),
                 quantity=int(item.get('quantity')),      
             )
-Item.instance_from_csv()
-print(Item.all)
+    @staticmethod
+    def is_int(some_num):
+        if isinstance(some_num, float):
+            return some_num.is_integer()  # ignoring floats that ends with .0 eg: 2.0, 4.0 etc
+        elif isinstance(some_num, int):
+            return True
+        else:
+            return False
+
+class Phone(Item):
+    pass
+
+
+phone1 = Item("iphone_X", 2000, 12)
+phone1.broken = 6
+phone2 = Item("samsumg_s21", 2300, 10)
+phone2.broken = 5
 
 
 
