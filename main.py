@@ -56,7 +56,7 @@ phone2 = Item("samsumg_s21", 2300, 10)
 phone2.broken = 5
 
 # revisit project after reviewing git commands
-
+# I am strugling to update my changes to the git repo online
 
 
 
