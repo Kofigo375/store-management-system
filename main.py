@@ -55,6 +55,8 @@ phone1.broken = 6
 phone2 = Item("samsumg_s21", 2300, 10)
 phone2.broken = 5
 
+# revisit project after reviewing git commands
+
 
 
 
