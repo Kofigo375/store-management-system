@@ -1,6 +1,5 @@
 import csv
 
-
 class Item:
     # class attributes belongs to the class and are common to all instances and can be assesed at the instance level
     pay_rate = 0.8 # the pay rate after 20% discount
@@ -48,14 +47,38 @@ class Item:
          
     def __repr__(self) -> str:
         return f"Item'{self.name}, {self.price}, {self.quantity}'"
-    
+  
 
+class Phone(Item):
+    all = []
+    def __init__(self, name: str, price: float, quantity=0, broken_phones=0):
+        #call on super function to access all attributes/methods from the parent function
+        super().__init__(
+            name, price, quantity
+        )
         
+        # validating the recieved arguments
+        assert broken_phones >= 0, f"Broken Phones {broken_phones} is not greater than or equal to  zero"
 
-print(Item.is_integer(77))
+        # Assigning attributes to self object
+        self.broken_phones = broken_phones
+        
+        #actions to execute
+        Phone.all.append(self)
+
+  
+phone_1 = Phone("iphone15", 500, 5)
+print(phone_1.calc_total_price())
+phone_2 = Phone("iphone11", 600, 4)
+
+
+
+
+    
 
 #the __dict__ magic attribute brings all the attributes at the class and instance level
 # when a class method is called, the class is passed as the first argument 
+# static method is not specific to any object so the static method can be defined outside the class as a function
 
 
     
